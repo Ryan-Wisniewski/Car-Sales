@@ -1,6 +1,9 @@
 import React from 'react';
-import AdditionalFeature from './AdditionalFeature';
 
+import { connect } from 'react-redux';
+import {addFeature} from '../actions'
+
+import AdditionalFeature from './AdditionalFeature';
 const AdditionalFeatures = props => {
   return (
     <div className="content">
@@ -17,5 +20,13 @@ const AdditionalFeatures = props => {
     </div>
   );
 };
+//after connection make the mapStateToProps
+const mapStateToProps = state => {
+  // console.log('stateAdditionalFeatures', state.store)
+  return{
+    store: state.store
+  }  
+}
 
-export default AdditionalFeatures;
+//connector here              //functions to use inside the obj
+export default connect(mapStateToProps, { addFeature })(AdditionalFeatures);

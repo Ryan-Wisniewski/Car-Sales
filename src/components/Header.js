@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+// import {addFeature} from '../actions'
+
 const Header = props => {
   return (
     <>
@@ -11,5 +14,11 @@ const Header = props => {
     </>
   );
 };
+const mapStateToProps = state => {
+    // console.log('Header', state.car)
+    return{
+      car: state.car
+    }  
+  }
+export default connect(mapStateToProps, {  })(Header);
 
-export default Header;
