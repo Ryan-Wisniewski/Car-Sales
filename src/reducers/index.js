@@ -26,11 +26,13 @@ export const reducers = (state = initialState, action) => {
           console.log('reeeeeeee', action.payload)
           return {
             ...state,
+            additionalPrice: state.additionalPrice + action.payload.price,
             car: 
-              {price: action.payload}
-            
+              {
+                ...state.car,
+                features: [...state.car.features, action.payload]
+              }            
           }
-
           case 'REMOVE_FEATURE':
             return{
               ...state,

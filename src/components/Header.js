@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // import {addFeature} from '../actions'
 
 const Header = props => {
+  console.log('props',props)
   return (
     <>
       <figure className="image is-128x128">
@@ -15,7 +16,7 @@ const Header = props => {
   );
 };
 const mapStateToProps = state => {
-    console.log('Header', state.car)
+    // console.log('Header', state.car)
     return{
       image: state.car.image,
       name: state.car.name,
