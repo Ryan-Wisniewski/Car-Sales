@@ -23,9 +23,12 @@ export const reducers = (state = initialState, action) => {
     console.log('reducer', state, action)
     switch(action.type) {
         case 'ADD_FEATURE':
+          console.log('reeeeeeee', action.payload)
           return {
             ...state,
-            features: [action.payload]
+            car: 
+              {price: action.payload}
+            
           }
 
           case 'REMOVE_FEATURE':
