@@ -1,7 +1,10 @@
 //actions for reducers here
-export const addFeature = () => {
-    console.log('action create was invoked')
-    return { type: 'ADD_FEATURE' }
+export const addFeature = (price) => {
+    console.log('action create was invoked', price)
+    return { 
+        type: 'ADD_FEATURE',
+        payload: price
+    }
 }
 
 export const removeFeature = () => {

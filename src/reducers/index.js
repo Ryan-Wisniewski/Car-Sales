@@ -1,3 +1,5 @@
+import { spread } from "q";
+
 //state -check and reducers here
 export const initialState = {
     //remove dis and put in iState -check
@@ -22,12 +24,14 @@ export const reducers = (state = initialState, action) => {
     switch(action.type) {
         case 'ADD_FEATURE':
           return {
-            
+            ...state,
+            features: [action.payload]
           }
 
           case 'REMOVE_FEATURE':
             return{
-              
+              ...state,
+
             }
         default:
             return state
